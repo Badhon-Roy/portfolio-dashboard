@@ -1,9 +1,10 @@
+import ManageSkillCreate from "@/components/modules/skills";
 
 
 const SkillCreatePage = () => {
     return (
         <div>
-           <h2>This is skill create page</h2> 
+          <ManageSkillCreate/>
         </div>
     );
 };

@@ -1,9 +1,12 @@
+import ManageAllSkills from "@/components/modules/skills/ManageAllSkills";
+import { getAllSkills } from "@/services/skills";
 
 
-const SkillMangePage = () => {
+const SkillMangePage = async() => {
+    const { data: skills } = await getAllSkills();
     return (
         <div>
-            <h2>Skill Manage Page</h2>
+          <ManageAllSkills skills={skills}/>
         </div>
     );
 };
