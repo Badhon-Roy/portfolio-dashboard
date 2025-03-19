@@ -13,8 +13,36 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Edit, Eye, Trash } from "lucide-react";
 import Link from "next/link";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import { DialogClose } from "@radix-ui/react-dialog";
+import { useState } from "react";
+import { toast } from "sonner";
+import { deleteProject } from "@/services/project";
 
 const ManageAllProjects = ({ projects }: { projects: IProject[] }) => {
+    const [isDeleteId, setIsDeleteId] = useState<string | null>(null)
+
+    const handleDelete = async () => {
+        const toastLoading = toast.loading("Deleting...");
+        try {
+            const res = await deleteProject(isDeleteId as string);
+            if (res.success) {
+                toast.success(res?.message, { id: toastLoading });
+            } else {
+                toast.error(res?.message, { id: toastLoading });
+            }
+        } catch (error: any) {
+            toast.error(error?.message || "Something went wrong!", { id: toastLoading });
+        }
+    }
     return (
         <div className="p-6 shadow-lg rounded-lg mt-8 border-2 border-white">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">All Projects</h2>
@@ -63,13 +91,33 @@ const ManageAllProjects = ({ projects }: { projects: IProject[] }) => {
                                             <Edit className="w-4 h-4" />
                                         </Button>
                                     </Link>
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        className="text-red-500 hover:bg-red-50"
-                                    >
-                                        <Trash className="w-4 h-4" />
-                                    </Button>
+
+                                    <Dialog>
+                                        <DialogTrigger asChild>
+                                            <Button
+                                                onClick={() => setIsDeleteId(project?._id)}
+                                                variant="outline"
+                                                size="sm"
+                                                className="text-red-500 hover:bg-red-50"
+                                            >
+                                                <Trash className="w-4 h-4" />
+                                            </Button>
+                                        </DialogTrigger>
+                                        <DialogContent className="sm:max-w-[425px] bg-white">
+                                            <DialogHeader>
+                                                <DialogTitle className="text-center text-xl font-bold">Are you sure</DialogTitle>
+                                                <DialogDescription className="text-center">
+                                                    went to delete "{project?.name}" this project
+                                                </DialogDescription>
+                                            </DialogHeader>
+                                            <div className="flex justify-between items-center gap-8">
+                                                <DialogClose asChild>
+                                                    <Button type="submit" className="bg-[#019fc7] text-white font-medium py-2 rounded-lg hover:bg-[#019fc7] focus:outline-none cursor-pointer">No</Button>
+                                                </DialogClose>
+                                                <Button type="submit" onClick={handleDelete} className="bg-[#c70101] text-white font-medium py-2 rounded-lg focus:outline-none cursor-pointer">Yes</Button>
+                                            </div>
+                                        </DialogContent>
+                                    </Dialog>
                                 </div>
                             </TableCell>
                         </TableRow>
