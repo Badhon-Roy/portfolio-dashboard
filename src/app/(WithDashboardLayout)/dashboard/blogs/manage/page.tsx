@@ -1,8 +1,11 @@
+import ManageAllBlogs from "@/components/modules/blogs/ManageAllBlogs";
+import { getAllBlogs } from "@/services/blog";
 
-const BlogManagePage = () => {
+const BlogManagePage = async() => {
+    const { data: blogs } = await getAllBlogs();
     return (
         <div>
-            <h2>Blog Manage Page</h2>
+            <ManageAllBlogs blogs={blogs}/>
         </div>
     );
 };
