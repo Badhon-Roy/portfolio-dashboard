@@ -13,7 +13,7 @@ const ManageDashboardLayout = ({ children }: { children: React.ReactNode }) => {
     const isActive = (path: string) => pathname === path;
 
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex min-h-screen bg-gray-100 ">
             {/* Sidebar */}
             <div
                 className={`bg-gray-900 text-white w-64 p-5 space-y-6 absolute inset-y-0 left-0 transform ${isOpen ? "translate-x-0" : "-translate-x-full"
@@ -27,7 +27,7 @@ const ManageDashboardLayout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* Navigation */}
                 <nav className="mt-6">
-                    <ul className="space-y-4">
+                    <ul className="space-y-4" onClick={() => setIsOpen(false)}>
                         {/* Project Section */}
                         <li>
                             <h3 className="text-gray-400 text-sm">Project Management</h3>
