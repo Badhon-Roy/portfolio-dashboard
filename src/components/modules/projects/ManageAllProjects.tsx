@@ -53,13 +53,16 @@ const ManageAllProjects = ({ projects }: { projects: IProject[] }) => {
                                         >
                                             <Eye className="w-4 h-4" />
                                         </Button></Link>
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        className="text-yellow-500 hover:bg-yellow-50"
-                                    >
-                                        <Edit className="w-4 h-4" />
-                                    </Button>
+
+                                    <Link href={`/dashboard/projects/update/${project?._id}`}>
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            className="text-yellow-500 hover:bg-yellow-50"
+                                        >
+                                            <Edit className="w-4 h-4" />
+                                        </Button>
+                                    </Link>
                                     <Button
                                         variant="outline"
                                         size="sm"
