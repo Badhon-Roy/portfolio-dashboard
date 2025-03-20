@@ -59,7 +59,7 @@ const ManageAllSkills = ({ skills }: { skills: ISkill[] }) => {
                             key={skill?._id}
                             className="border-t border-b border-gray-200 hover:bg-gray-50"
                         >
-                            <TableCell className="px-4 py-3 flex items-center gap-3">
+                            <TableCell className="px-4 py-3 flex items-center gap-3 mr-16">
                                 <Image
                                     className="rounded-lg border-2 border-white shadow-md object-contain"
                                     src={skill?.icon}

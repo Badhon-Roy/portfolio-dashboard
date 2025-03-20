@@ -79,9 +79,9 @@ const ManageProjectCreate = () => {
             <div className="w-full p-6 bg-white/10 backdrop-blur-lg rounded-xl shadow-lg border-2 border-white">
                 <h2 className="text-3xl font-bold text-center mb-5">Add a Project</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <div className="flex items-center justify-between gap-8">
+                    <div className="md:flex items-center justify-between gap-8">
                         {/* Project Name */}
-                        <div className="w-3/5">
+                        <div className="md:w-3/5">
                             <label className="mb-2 font-medium text-gray-700 block">Project Name</label>
                             <input
                                 {...register("name")}
@@ -92,7 +92,7 @@ const ManageProjectCreate = () => {
                         </div>
 
                         {/* Project Type */}
-                        <div className="w-2/5">
+                        <div className="md:w-2/5 md:mt-0 mt-4">
                             <label htmlFor="projectType" className="mb-2 font-medium text-gray-700 block">
                                 Project Type
                             </label>
@@ -113,7 +113,7 @@ const ManageProjectCreate = () => {
                     {/* Images */}
                     <div>
                         <label className="mb-2 font-medium text-gray-700 block">Project Image URL</label>
-                        <div className="flex gap-8">
+                        <div className="md:flex gap-8 md:space-y-0 space-y-4">
                             {[...Array(3)].map((_, i) => (
                                 <input
                                     key={i}
@@ -137,7 +137,7 @@ const ManageProjectCreate = () => {
                     </div>
 
                     {/* Technologies Used */}
-                    <div className="grid grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-8">
                         <div>
                             <label className="mb-2 font-medium text-gray-700 block">Frontend</label>
                             <input
@@ -180,7 +180,7 @@ const ManageProjectCreate = () => {
                     </div>
 
                     {/* Links */}
-                    <div className="grid grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-8">
                         <div>
                             <label className="mb-2 font-medium text-gray-700 block">Live Site</label>
                             <div className="flex items-center space-x-2">
@@ -224,7 +224,7 @@ const ManageProjectCreate = () => {
                     {/* Key Features */}
                     <div>
                         <label className="mb-2 font-medium text-gray-700 block">Key Features</label>
-                        <div className="flex gap-8">
+                        <div className="md:flex gap-8 md:space-y-0 space-y-4" >
                             {[...Array(3)].map((_, i) => (
                                 <input
                                     key={i}

@@ -4,6 +4,8 @@ import { Menu, FolderPlus, FolderOpen, BookPlus, BookOpen, Wrench, Settings, Lay
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import logo from "../../../app/assets/images/personal_logo.png"
+import Image from "next/image";
 
 const ManageDashboardLayout = ({ children }: { children: React.ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,15 +15,15 @@ const ManageDashboardLayout = ({ children }: { children: React.ReactNode }) => {
     const isActive = (path: string) => pathname === path;
 
     return (
-        <div className="flex min-h-screen bg-gray-100 ">
+        <div className="flex min-h-screen  w-full">
             {/* Sidebar */}
             <div
-                className={`bg-gray-900 text-white w-64 p-5 space-y-6 absolute inset-y-0 left-0 transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+                className={`bg-gray-900 text-white w-64 p-5 space-y-6 absolute inset-y-0 left-0 z-50 transform ${isOpen ? "translate-x-0" : "-translate-x-full"
                     } md:relative md:translate-x-0 transition-transform duration-300 ease-in-out`}
             >
                 {/* Logo & Title */}
                 <div className="flex items-center space-x-2">
-                    <LayoutDashboard size={24} />
+                    <Image className="object-contain" src={logo} alt="logo" width={46} height={46}/>
                     <h2 className="text-xl font-bold">Dashboard</h2>
                 </div>
 

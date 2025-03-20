@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { loginUser } from '@/services/auth';
 import { EyeIcon, EyeOff } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -17,7 +18,7 @@ const LoginForm = () => {
     const [isMatchedPassword, setIsMatchedPassword] = useState(false);
     const [passwordVisible, setPasswordVisible] = useState(false); // State to control password visibility
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false); // State for confirm password visibility
-
+    const router = useRouter();
     const {
         register,
         handleSubmit,
@@ -43,6 +44,7 @@ const LoginForm = () => {
             const res = await loginUser(data)
             if (res.success) {
                 toast.success(res?.message, { id: toastLoading })
+                router.push('http://localhost:3000/dashboard')
             } else {
                 toast.error(res?.message, { id: toastLoading })
             }

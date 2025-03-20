@@ -61,7 +61,7 @@ const ManageSkillCreate = () => {
             <div className="w-full p-6 bg-white/10 backdrop-blur-lg rounded-xl shadow-lg border-2 border-white">
                 <h2 className="text-3xl font-bold text-center mb-5">Add a Skill</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <div className="flex items-center justify-between gap-8">
+                    <div className="md:flex items-center justify-between gap-8">
                         {/* Name */}
                         <div className="flex-1">
                             <label className="mb-2 font-medium text-gray-700 block">Skill Name</label>
@@ -74,7 +74,7 @@ const ManageSkillCreate = () => {
                         </div>
 
                         {/* Proficiency */}
-                        <div className="flex-1">
+                        <div className="flex-1 md:mt-0 mt-4">
                             <label htmlFor="proficiency" className="mb-2 font-medium text-gray-700 block">
                                 Proficiency
                             </label>

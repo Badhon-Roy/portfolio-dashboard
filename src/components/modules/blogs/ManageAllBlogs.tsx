@@ -59,7 +59,7 @@ const ManageAllBlogs = ({ blogs }: { blogs: IBlog[] }) => {
                             key={blog?._id}
                             className="border-t border-b border-gray-200 hover:bg-gray-50"
                         >
-                            <TableCell className="px-4 py-3 flex items-center gap-3">
+                            <TableCell className="px-4 py-3 flex items-center gap-3 mr-20">
                                 <Image
                                     className="rounded-lg border-2 border-white shadow-md object-contain"
                                     src={blog?.thumbnail}
