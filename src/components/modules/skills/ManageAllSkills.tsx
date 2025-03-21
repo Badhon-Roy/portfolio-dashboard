@@ -106,7 +106,7 @@ const ManageAllSkills = ({ skills }: { skills: ISkill[] }) => {
                                             <DialogHeader>
                                                 <DialogTitle className="text-center text-xl font-bold">Are you sure</DialogTitle>
                                                 <DialogDescription className="text-center">
-                                                    went to delete "{skill?.name}" this skill
+                                                    went to delete &quot;{skill?.name}&quot; this skill
                                                 </DialogDescription>
                                             </DialogHeader>
                                             <div className="flex justify-between items-center gap-8">

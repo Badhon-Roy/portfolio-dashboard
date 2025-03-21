@@ -1,4 +1,5 @@
 import { getSingleBlog } from "@/services/blog";
+import Image from "next/image";
 
 const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = await params;
@@ -9,10 +10,12 @@ const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) 
         <div className="p-6 bg-white rounded-lg shadow-lg">
             {/* Blog Thumbnail */}
             <div className="mb-6">
-                <img
+                <Image
                     src={thumbnail}
                     alt={title}
                     className="w-full h-60 object-cover rounded-lg"
+                    width={600}
+                    height={240}
                 />
             </div>
 

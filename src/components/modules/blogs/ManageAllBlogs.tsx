@@ -1,6 +1,6 @@
 "use client";
 
-import { IBlog, IProject } from "@/types";
+import { IBlog } from "@/types";
 import {
     Table,
     TableBody,
@@ -106,7 +106,7 @@ const ManageAllBlogs = ({ blogs }: { blogs: IBlog[] }) => {
                                             <DialogHeader>
                                                 <DialogTitle className="text-center text-xl font-bold">Are you sure</DialogTitle>
                                                 <DialogDescription className="text-center">
-                                                    went to delete "{blog?.title}" this blog
+                                                    went to delete &quot;{blog?.title}&quot; this blog
                                                 </DialogDescription>
                                             </DialogHeader>
                                             <div className="flex justify-between items-center gap-8">

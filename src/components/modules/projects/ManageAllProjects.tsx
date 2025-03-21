@@ -17,7 +17,6 @@ import {
     Dialog,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -110,7 +109,7 @@ const ManageAllProjects = ({ projects }: { projects: IProject[] }) => {
                                                 <DialogHeader>
                                                     <DialogTitle className="text-center text-xl font-bold">Are you sure</DialogTitle>
                                                     <DialogDescription className="text-center">
-                                                        went to delete "{project?.name}" this project
+                                                        went to delete &quot;{project?.name}&quot; this project
                                                     </DialogDescription>
                                                 </DialogHeader>
                                                 <div className="flex justify-between items-center gap-8">

@@ -4,12 +4,9 @@ import { getCurrentUser } from "./services/auth";
 
 export const middleware = async (request: NextRequest) => {
     const userInfo = await getCurrentUser();
-    console.log("from-middleware =>", userInfo);
-
-    if (!userInfo || userInfo?.email !== process.env.PERSONAL_EMAIL) {
+    if (userInfo?.email !== process.env.PERSONAL_EMAIL) {
         return NextResponse.redirect(new URL("/", request.url));
     }
-    return NextResponse.next();
 };
 
 export const config = {
