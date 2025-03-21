@@ -1,10 +1,9 @@
 import ManageDashboardLayout from "@/components/modules/dashboard/DashboardLayout";
 
-
-const DashboardLayout = ({ children }: { children: any }) => {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>
-            <ManageDashboardLayout children={children} />
+            <ManageDashboardLayout>{children}</ManageDashboardLayout>
         </div>
     );
 };

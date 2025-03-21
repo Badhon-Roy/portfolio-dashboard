@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import { Menu, FolderPlus, FolderOpen, BookPlus, BookOpen, Wrench, Settings, LayoutDashboard } from "lucide-react";
+import { Menu, FolderPlus, FolderOpen, BookPlus, BookOpen, Wrench, Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
