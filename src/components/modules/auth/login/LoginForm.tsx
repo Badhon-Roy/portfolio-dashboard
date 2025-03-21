@@ -44,7 +44,7 @@ const LoginForm = () => {
             const res = await loginUser(data)
             if (res.success) {
                 toast.success(res?.message, { id: toastLoading })
-                router.push('http://localhost:3000/dashboard')
+                router.push('/dashboard')
             } else {
                 toast.error(res?.message, { id: toastLoading })
             }
